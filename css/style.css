@@ -34,6 +34,7 @@ button {
   outline: none;
   border-radius: 20px;
   background-color: #000;
+  cursor: pointer;
 }
 .search {
   padding: 1rem;
@@ -102,4 +103,5 @@ span {
   background-color: #000;
   color: #fff;
 }
+
 
