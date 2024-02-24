@@ -81,15 +81,54 @@ fetch(filePath)
     console.error(error);
   });
 
-const modeButton = document.getElementById('modeButton');
-const header = document.querySelector('header');
+  const modeButton = document.getElementById('modeButton');
+  const header = document.querySelector('header');
+  
+  modeButton.addEventListener('click', function() {
+      if (header.classList.contains('dark')) {
+          header.classList.remove('dark');
+          document.body.style.backgroundColor = 'white';
+          document.body.style.color = 'black';
+          document.body.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+          searchInput.style.backgroundColor = 'white'; // Search input background color
+          searchInput.style.color = 'black'; // Search input text color
+          searchInput.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; // Search input box shadow
+          regionFilterSelect.style.backgroundColor = 'white'; // Region filter select background color
+          regionFilterSelect.style.color = 'black'; // Region filter select text color
+          regionFilterSelect.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; // Region filter select box shadow
+          header.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; // Header box shadow
+          document.querySelectorAll('.card').forEach(card => {
+              card.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+          });
+          modeButton.textContent = 'Dark Mode';
+      } else {
+          header.classList.add('dark');
+          document.body.style.backgroundColor = 'black';
+          document.body.style.color = 'white';
+          document.body.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+          searchInput.style.backgroundColor = 'black'; // Search input background color
+          searchInput.style.color = 'white'; // Search input text color
+          searchInput.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)'; // Search input box shadow
+          regionFilterSelect.style.backgroundColor = 'black'; // Region filter select background color
+          regionFilterSelect.style.color = 'white'; // Region filter select text color
+          regionFilterSelect.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)'; // Region filter select box shadow
+          header.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)'; // Header box shadow
+          document.querySelectorAll('.card').forEach(card => {
+              card.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+          });
+          modeButton.textContent = 'Light Mode';
+      }
+  });
+  
 
-modeButton.addEventListener('click', function() {
-    if (header.classList.contains('dark')) {
-        header.classList.remove('dark');
-        modeButton.textContent = 'Dark Mode';
-    } else {
-        header.classList.add('dark');
-        modeButton.textContent = 'Light Mode';
-    }
-});
+ 
+  
+ 
+  
+
+
+  
+  
+  
+  
+  
